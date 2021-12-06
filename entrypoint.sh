@@ -6,4 +6,6 @@ set -e
 echo "$KUBE_CONFIG_DATA" | base64 -d > /tmp/config
 export KUBECONFIG=/tmp/config
 
+cat /tmp/config
+
 sh -c "KUBECONFIG=/tmp/config kubectl $*"
